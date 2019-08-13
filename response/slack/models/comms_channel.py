@@ -42,7 +42,7 @@ class CommsChannelManager(models.Manager):
 class CommsChannel(models.Model):
 
     objects = CommsChannelManager()
-    incident = models.ForeignKey(Incident, on_delete=models.CASCADE)
+    incident = models.ForeignKey(Incident, related_name="channels", on_delete=models.CASCADE)
     channel_id = models.CharField(max_length=20, null=False)
 
     def post_in_channel(self, message: str):

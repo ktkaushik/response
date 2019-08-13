@@ -53,6 +53,8 @@ def test_list_incidents(arf, api_user):
         assert lead["display_name"]
         assert lead["external_id"]
 
+        assert "channels" in incident
+
         # TODO: verify actions are serialised inline
 
 

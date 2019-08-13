@@ -1,11 +1,8 @@
 from rest_framework import serializers
-from rest_framework.decorators import action
 
 from response.core.models.incident import Incident
 from response.core.models.action import Action
 from response.core.models.user_external import ExternalUser
-
-from django.contrib.auth.models import User
 
 
 class ExternalUserSerializer(serializers.ModelSerializer):
@@ -36,6 +33,7 @@ class IncidentSerializer(serializers.ModelSerializer):
         model = Incident
         fields = (
             "action_set",
+            "channels",
             "end_time",
             "impact",
             "lead",
